@@ -11,8 +11,30 @@ NC='\033[0m' # No Color
 
 clear
 
-echo -e "${YELLOW}    ___    __  ___________  __  ______  __________ ___________   __
-Hassan Farouk
+echo -e "${YELLOW}    ___    __  ___________  __  ______  __________ ___________   __                                                                                                                                                       
+EEEEEEEEEEEEEEEEEEEEEE                                                                                                                   tttt          
+E::::::::::::::::::::E                                                                                                                ttt:::t          
+E::::::::::::::::::::E                                                                                                                t:::::t          
+EE::::::EEEEEEEEE::::E                                                                                                                t:::::t          
+  E:::::E       EEEEEE   ggggggggg   gggggyyyyyyy           yyyyyyywwwwwww           wwwww           wwwwwwwrrrrr   rrrrrrrrr   ttttttt:::::ttttttt    
+  E:::::E               g:::::::::ggg::::g y:::::y         y:::::y  w:::::w         w:::::w         w:::::w r::::rrr:::::::::r  t:::::::::::::::::t    
+  E::::::EEEEEEEEEE    g:::::::::::::::::g  y:::::y       y:::::y    w:::::w       w:::::::w       w:::::w  r:::::::::::::::::r t:::::::::::::::::t    
+  E:::::::::::::::E   g::::::ggggg::::::gg   y:::::y     y:::::y      w:::::w     w:::::::::w     w:::::w   rr::::::rrrrr::::::rtttttt:::::::tttttt    
+  E:::::::::::::::E   g:::::g     g:::::g     y:::::y   y:::::y        w:::::w   w:::::w:::::w   w:::::w     r:::::r     r:::::r      t:::::t          
+  E::::::EEEEEEEEEE   g:::::g     g:::::g      y:::::y y:::::y          w:::::w w:::::w w:::::w w:::::w      r:::::r     rrrrrrr      t:::::t          
+  E:::::E             g:::::g     g:::::g       y:::::y:::::y            w:::::w:::::w   w:::::w:::::w       r:::::r                  t:::::t          
+  E:::::E       EEEEEEg::::::g    g:::::g        y:::::::::y              w:::::::::w     w:::::::::w        r:::::r                  t:::::t    tttttt
+EE::::::EEEEEEEE:::::Eg:::::::ggggg:::::g         y:::::::y                w:::::::w       w:::::::w         r:::::r                  t::::::tttt:::::t
+E::::::::::::::::::::E g::::::::::::::::g          y:::::y                  w:::::w         w:::::w          r:::::r                  tt::::::::::::::t
+E::::::::::::::::::::E  gg::::::::::::::g         y:::::y                    w:::w           w:::w           r:::::r                    tt:::::::::::tt
+EEEEEEEEEEEEEEEEEEEEEE    gggggggg::::::g        y:::::y                      www             www            rrrrrrr                      ttttttttttt  
+                                  g:::::g       y:::::y                                                                                                
+                      gggggg      g:::::g      y:::::y                                                                                                 
+                      g:::::gg   gg:::::g     y:::::y                                                                                                  
+                       g::::::ggg:::::::g    y:::::y                                                                                                   
+                        gg:::::::::::::g    yyyyyyy                                                                                                    
+                          ggg::::::ggg                                                                                                                 
+                             gggggg                                                                                                                    
 
   SIP Server Manager"
 echo " "
