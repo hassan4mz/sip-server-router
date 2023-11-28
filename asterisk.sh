@@ -51,4 +51,4 @@ rm -f gip.sh && wget https://raw.githubusercontent.com/hassan4mz/sip-server-rout
 
 cp gip.sh /sbin/gip
 
-echo -e "${GREEN} Made With Love By : AmirHossein Choghaei ${NC}"
+echo -e "${GREEN} Made With Love By : Egywrt.EG ${NC}"
