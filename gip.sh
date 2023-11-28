@@ -28,7 +28,7 @@ echo -e "${YELLOW} 2.${NC} ${CYAN} Delete SIP User ${NC}"
 echo -e "${YELLOW} 3.${NC} ${CYAN} Show Users ${NC}"
 echo -e "${YELLOW} 4.${NC} ${RED} EXIT ${NC}"
 echo ""
-echo -e "${YELLOW} >${NC} ${MAGENTA} Telegrma : @AmirHosseinTSL ${NC}"
+echo -e "${YELLOW} >${NC} ${MAGENTA} Email : Egywrt.eg@gmail.com ${NC}"
 
 echo " "
  read -p " -Enter option number: " choice
@@ -37,7 +37,7 @@ echo " "
 
 1)
 
-            read -p " -Enter SIP User: (* 4 digits numbers XXXX *) : " user
+            read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user
 			
 			read -p " -Enter SIP Password: " pass
 			
