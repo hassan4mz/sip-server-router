@@ -80,7 +80,7 @@ direct_media = no ;${user}
 
 [${user}] ;${user}
 type = aor ;${user}
-;max_contacts = 100 ;${user}
+max_contacts = 3 ;${user}
 support_path = yes ;${user}
 
 [auth${user}] ;${user}
