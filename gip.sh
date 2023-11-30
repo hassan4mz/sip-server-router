@@ -25,8 +25,10 @@ echo -e "${YELLOW}    ___    __  ___________  __  ______  __________ ___________
 echo " "
 echo -e "${YELLOW} 1.${NC} ${CYAN} New SIP User ${NC}"
 echo -e "${YELLOW} 2.${NC} ${CYAN} Delete SIP User ${NC}"
-echo -e "${YELLOW} 3.${NC} ${CYAN} Show Users ${NC}"
-echo -e "${YELLOW} 4.${NC} ${RED} EXIT ${NC}"
+echo -e "${YELLOW} 3.${NC} ${CYAN} New Trunk ${NC}"
+echo -e "${YELLOW} 4.${NC} ${CYAN} Delete Trunk ${NC}"
+echo -e "${YELLOW} 5.${NC} ${CYAN} Show Users ${NC}"
+echo -e "${YELLOW} 6.${NC} ${RED} EXIT ${NC}"
 echo ""
 echo -e "${YELLOW} >${NC} ${MAGENTA} Email : Egywrt.eg@gmail.com ${NC}"
 
@@ -161,7 +163,7 @@ fi
 
 
 
-3)
+5)
         
 		
 		asterisk -rx "pjsip list endpoints"
@@ -169,7 +171,7 @@ fi
         read -s -n 1
         ;;
 
-4)
+6)
             echo ""
             echo -e "${GREEN}Exiting...${NC}"
             exit 0
