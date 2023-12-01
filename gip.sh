@@ -167,7 +167,7 @@ fi
 		
 			sleep 3			
 		
-			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[::]]*' | sed -n '1p'`
+			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[:abc:]]*' | sed -n '1p'`
 			
 			sleep 1
  
