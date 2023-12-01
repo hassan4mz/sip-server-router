@@ -164,7 +164,7 @@ fi
             read -p " -Enter SIP Trunk: (* 4 name   *) : " name1
 			
 			read -p " -Enter SIP Trunk ip: " trunkip
-		if [[ $name1 =~ ^[abc]+$ ]]; then
+		if [[ $name1 =~ ^[1-9]+$ ]]; then
 			
 			sleep 1
 			
