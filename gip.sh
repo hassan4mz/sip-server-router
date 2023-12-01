@@ -167,13 +167,13 @@ fi
 		
 			sleep 3			
 		
-			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[:*:]]*' | sed -n '1p'`
+			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[:hassan:]]*' | sed -n '1p'`
 			
 			sleep 1
  
-           if [ "$NAM" == "${name}" ]; then
+           if [ "$NAM" == "${name1}" ]; then
 		   
-		   echo -e "${RED}  ERROR : User ${name} already exists ${NC}" 
+		   echo -e "${RED}  ERROR : User ${name1} already exists ${NC}" 
 
            sleep 3
 		   gip		   
