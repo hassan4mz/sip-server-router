@@ -192,22 +192,28 @@ fi
 
 else
 
-echo "			
-[${name1}] ;${name1}
-type=aor ;${name1}
-contact=sip:${trunkip}:5060 ;${name1}
-[${name1}] ;${name1}
-type=endpoint ;${name1}
-transport=transport-udp ;${name1}
-context=from-external ;${name1}
-disallow=all ;${name1}
-allow=all ;${name1}
-outbound_auth=${name1}_auth ;${name1}
-aors=${name1} ;${name1}
-[${name1}] ;${name1}
-type=identify ;${name1}
-endpoint=${name1} ;${name1}
-match=${trunkip} ;${name1}
+echo "		
+
+
+[${user}] ;${user}
+type = endpoint ;${user}
+context = internal ;${user}
+disallow = all ;${user}
+allow = alaw ;${user}
+aors = ${user} ;${user}
+auth = auth${user} ;${user}
+direct_media = no ;${user}
+
+[${user}] ;${user}
+type = aor ;${user}
+max_contacts = 3 ;${user}
+support_path = yes ;${user}
+
+[auth${user}] ;${user}
+type=auth ;${user}
+auth_type=userpass ;${user}
+password=${pass} ;${user}
+username=${user} ;${user}
 ">> /etc/asterisk/pjsip.conf
             
 echo -e "${GREEN}  User ${name1} Created Successfully ${NC}"       
