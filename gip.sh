@@ -160,11 +160,11 @@ fi
 		
 
 3)
-
-            read -p " -Enter SIP Trunk: (* 4 name   *) : " name1
+ 		 read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " name1
 			
-			read -p " -Enter SIP Trunk ip: " trunkip
-		if [[ $name1 =~ ^[1-9]+$ ]]; then
+			read -p " -Enter SIP Password: " trunkip
+   
+			if [[ $name1 =~ ^[0-9]+$ ]]; then
 			
 			sleep 1
 			
@@ -177,11 +177,12 @@ fi
 			
 			fi
 			
-			NAM=`grep -o "aors = ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			
+			USR1=`grep -o "aors = ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
-           if [ "$NAM" == "${name1}" ]; then
+           if [ "$USR1" == "${name1}" ]; then
 		   
 		   echo -e "${RED}  ERROR : User ${name1} already exists ${NC}" 
 
