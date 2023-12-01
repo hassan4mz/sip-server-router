@@ -1,4 +1,4 @@
-#!/bin/sh
+v#!/bin/sh
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -36,6 +36,7 @@ echo " "
  read -p " -Enter option number: " choice
 
     case $choice in
+
 1)
 
             read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user
@@ -70,6 +71,7 @@ echo " "
 else
 
 echo "			
+
 [${user}] ;${user}
 type = endpoint ;${user}
 context = internal ;${user}
@@ -155,21 +157,21 @@ fi
    read -s -n 1
    ;;
 
-
+		
+		
 
 3)
-
-            read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user1
+ 		 read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " name1
 			
-			read -p " -Enter SIP Password: " pass1
-			
-			if [[ $user1 =~ ^[0-9]+$ ]]; then
+			read -p " -Enter SIP Password: " trunkip
+   
+			if [[ $name1 =~ ^[0-9]+$ ]]; then
 			
 			sleep 1
 			
 			else
 			
-			echo -e "${RED}  ERROR : ${user1} is not a number ! ${NC}"
+			echo -e "${RED}  ERROR : ${name1} is not a number ! ${NC}"
 			
 			sleep 3
 			gip
@@ -177,13 +179,13 @@ fi
 			fi
 			
 			
-			USR1=`grep -o "aors = ${user1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			USR1=`grep -o "aors= ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
-           if [ "$USR1" == "${user1}" ]; then
+           if [ "$USR1" == "${name1}" ]; then
 		   
-		   echo -e "${RED}  ERROR : User ${user1} already exists ${NC}" 
+		   echo -e "${RED}  ERROR : User ${name1} already exists ${NC}" 
 
            sleep 3
 		   gip		   
@@ -191,27 +193,41 @@ fi
 else
 
 echo "			
-[${user1}] ;${user1}
-type = endpoint ;${user1}
-context = internal ;${user1}
-disallow = all ;${user1}
-allow = alaw ;${user1}
-aors = ${user1} ;${user1}
-auth = auth${user1} ;${user1}
-direct_media = no ;${user1}
+[${name1}] ;${name1}
+type=aor ;${name1}
+contact=sip:${trunkip}:5060 ;${name1}
+[${name1}] ;${name1}
+type=endpoint ;${name1}
+transport=transport-udp ;${name1}
+context=from-external ;${name1}
+disallow=all ;${name1}
+allow=all ;${name1}
+outbound_auth=${name1}_auth ;${name1}
+aors=${name1} ;${name1}
+[${name1}] ;${name1}
+type=identify ;${name1}
+endpoint=${name1} ;${name1}
+match=${trunkip} ;${name1}
+">> /etc/asterisk/pjsip.conf
+            
+echo -e "${GREEN}  User ${name1} Created Successfully ${NC}"       
 
-[${user1}] ;${user1}
-type = aor ;${user1}
-max_contacts = 3 ;${user1}
-support_path = yes ;${user1}
 
-[auth${user1}] ;${user1}
-type=auth ;${user1}
-auth_type=userpass ;${user1}
-password=${pass1} ;${user1}
-username=${user1} ;${user1}
-">> /etc/asterisk/pjsip.conf          
+fi
+
+service asterisk restart
+sleep 3
+gip
+
+read -s -n 1
+;;
+
+
+
+
 5)
+        
+		
 		asterisk -rx "pjsip list endpoints"
 
         read -s -n 1
