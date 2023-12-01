@@ -168,8 +168,6 @@ fi
 			sleep 3
 			gip
 			
-			fi
-			
 			
 			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
