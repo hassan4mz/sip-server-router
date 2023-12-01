@@ -155,14 +155,9 @@ fi
    read -s -n 1
    ;;
 
-		
-		
 
 
-
-
-
-1)
+3)
 
             read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user
 			
