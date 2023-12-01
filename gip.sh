@@ -159,17 +159,17 @@ fi
 
 3)
 
-            read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user
+            read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user1
 			
-			read -p " -Enter SIP Password: " pass
+			read -p " -Enter SIP Password: " pass1
 			
-			if [[ $user =~ ^[0-9]+$ ]]; then
+			if [[ $user1 =~ ^[0-9]+$ ]]; then
 			
 			sleep 1
 			
 			else
 			
-			echo -e "${RED}  ERROR : ${user} is not a number ! ${NC}"
+			echo -e "${RED}  ERROR : ${user1} is not a number ! ${NC}"
 			
 			sleep 3
 			gip
@@ -177,13 +177,13 @@ fi
 			fi
 			
 			
-			USR=`grep -o "aors = ${user}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			USR1=`grep -o "aors = ${user1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
-           if [ "$USR" == "${user}" ]; then
+           if [ "$USR1" == "${user1}" ]; then
 		   
-		   echo -e "${RED}  ERROR : User ${user} already exists ${NC}" 
+		   echo -e "${RED}  ERROR : User ${user1} already exists ${NC}" 
 
            sleep 3
 		   gip		   
@@ -191,25 +191,25 @@ fi
 else
 
 echo "			
-[${user}] ;${user}
-type = endpoint ;${user}
-context = internal ;${user}
-disallow = all ;${user}
-allow = alaw ;${user}
-aors = ${user} ;${user}
-auth = auth${user} ;${user}
-direct_media = no ;${user}
+[${user1}] ;${user1}
+type = endpoint ;${user1}
+context = internal ;${user1}
+disallow = all ;${user1}
+allow = alaw ;${user1}
+aors = ${user1} ;${user1}
+auth = auth${user1} ;${user1}
+direct_media = no ;${user1}
 
-[${user}] ;${user}
-type = aor ;${user}
-max_contacts = 3 ;${user}
-support_path = yes ;${user}
+[${user1}] ;${user1}
+type = aor ;${user1}
+max_contacts = 3 ;${user1}
+support_path = yes ;${user1}
 
-[auth${user}] ;${user}
-type=auth ;${user}
-auth_type=userpass ;${user}
-password=${pass} ;${user}
-username=${user} ;${user}
+[auth${user1}] ;${user1}
+type=auth ;${user1}
+auth_type=userpass ;${user1}
+password=${pass1} ;${user1}
+username=${user1} ;${user1}
 ">> /etc/asterisk/pjsip.conf
             
 4)
