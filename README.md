@@ -20,7 +20,7 @@ Step 2 : Sip Manage Menu Command :
 gip
 ```
 
-![This is an image](https://raw.githubusercontent.com/amirhosseinchoghaei/sip-server-router/main/Asterisk.png)
+![This is an image](https://raw.githubusercontent.com/hassan4mz/sip-server-router/new/Asterisk.png)
 
 
 Done !
