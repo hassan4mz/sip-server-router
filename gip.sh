@@ -161,11 +161,10 @@ fi
 
 3)
 
-            read -p " -Enter SIP Trunk: (* 4 name   *) : " name
+            read -p " -Enter SIP Trunk: (* 4 name   *) : " name1
 			
 			read -p " -Enter SIP Trunk ip: " trankip
-			
-			
+		
 			sleep 3
 			gip
 			
@@ -186,24 +185,24 @@ fi
 else
 
 echo "			
-[${name}]
+[${name1}]
 type=aor
 contact=sip:${trunkip}:5060
-[${name}]
+[${name1}]
 type=endpoint
 transport=transport-udp
 context=from-external
 disallow=all
 allow=all
 outbound_auth=gotrunk_auth
-aors=${name}
-[${name}]
+aors=${name1}
+[${name1}]
 type=identify
-endpoint=${name}
+endpoint=${name1}
 match=${trunkip}
 ">> /etc/asterisk/pjsip.conf
             
-echo -e "${GREEN}  User ${user} Created Successfully ${NC}"       
+echo -e "${GREEN}  User ${name1} Created Successfully ${NC}"       
 
 
 fi
