@@ -212,7 +212,7 @@ password=${pass1} ;${user1}
 username=${user1} ;${user1}
 ">> /etc/asterisk/pjsip.conf
             
-4)
+5)
         
 		
 		asterisk -rx "pjsip list endpoints"
@@ -220,7 +220,7 @@ username=${user1} ;${user1}
         read -s -n 1
         ;;
 
-5)
+6)
             echo ""
             echo -e "${GREEN}Exiting...${NC}"
             exit 0
