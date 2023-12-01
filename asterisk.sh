@@ -47,7 +47,7 @@ service asterisk restart
 
 cd
 
-rm -f gip.sh && wget https://raw.githubusercontent.com/hassan4mz/sip-server-router/main/gip.sh && chmod 777 gip.sh
+rm -f gip.sh && wget https://raw.githubusercontent.com/hassan4mz/sip-server-router/new/gip.sh && chmod 777 gip.sh
 
 cp gip.sh /sbin/gip
 
