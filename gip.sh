@@ -165,10 +165,8 @@ fi
 			
 			read -p " -Enter SIP Trunk ip: " trankip
 		
-			sleep 3
-			gip
-			
-			
+			sleep 3			
+		
 			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
