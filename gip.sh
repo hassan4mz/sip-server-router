@@ -71,6 +71,7 @@ echo " "
 else
 
 echo "			
+
 [${user}] ;${user}
 type = endpoint ;${user}
 context = internal ;${user}
