@@ -163,7 +163,7 @@ fi
 
             read -p " -Enter SIP Trunk: (* 4 name   *) : " name1
 			
-			read -p " -Enter SIP Trunk ip: " trankip
+			read -p " -Enter SIP Trunk ip: " trunkip
 		
 			sleep 3			
 		
@@ -190,7 +190,7 @@ transport=transport-udp
 context=from-external
 disallow=all
 allow=all
-outbound_auth=gotrunk_auth
+outbound_auth=${name1}_auth
 aors=${name1}
 [${name1}]
 type=identify
