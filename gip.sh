@@ -36,7 +36,6 @@ echo " "
  read -p " -Enter option number: " choice
 
     case $choice in
-
 1)
 
             read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user
@@ -71,7 +70,6 @@ echo " "
 else
 
 echo "			
-
 [${user}] ;${user}
 type = endpoint ;${user}
 context = internal ;${user}
@@ -160,18 +158,23 @@ fi
 		
 		
 
-3)
- 		 read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " name1
+
+
+
+
+1)
+
+            read -p " -Enter SIP User: (* 4 digits numbers XXX *) : " user
 			
-			read -p " -Enter SIP Password: " trunkip
-   
-			if [[ $name1 =~ ^[0-9]+$ ]]; then
+			read -p " -Enter SIP Password: " pass
+			
+			if [[ $user =~ ^[0-9]+$ ]]; then
 			
 			sleep 1
 			
 			else
 			
-			echo -e "${RED}  ERROR : ${name1} is not a number ! ${NC}"
+			echo -e "${RED}  ERROR : ${user} is not a number ! ${NC}"
 			
 			sleep 3
 			gip
@@ -179,22 +182,20 @@ fi
 			fi
 			
 			
-			USR1=`grep -o "aors= ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			USR=`grep -o "aors = ${user}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
-           if [ "$USR1" == "${name1}" ]; then
+           if [ "$USR" == "${user}" ]; then
 		   
-		   echo -e "${RED}  ERROR : User ${name1} already exists ${NC}" 
+		   echo -e "${RED}  ERROR : User ${user} already exists ${NC}" 
 
            sleep 3
 		   gip		   
 
 else
 
-echo "		
-
-
+echo "			
 [${user}] ;${user}
 type = endpoint ;${user}
 context = internal ;${user}
@@ -216,22 +217,7 @@ password=${pass} ;${user}
 username=${user} ;${user}
 ">> /etc/asterisk/pjsip.conf
             
-echo -e "${GREEN}  User ${name1} Created Successfully ${NC}"       
-
-
-fi
-
-service asterisk restart
-sleep 3
-gip
-
-read -s -n 1
-;;
-
-
-
-
-5)
+4)
         
 		
 		asterisk -rx "pjsip list endpoints"
@@ -239,7 +225,7 @@ read -s -n 1
         read -s -n 1
         ;;
 
-6)
+5)
             echo ""
             echo -e "${GREEN}Exiting...${NC}"
             exit 0
