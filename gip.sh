@@ -210,11 +210,8 @@ type=auth ;${user1}
 auth_type=userpass ;${user1}
 password=${pass1} ;${user1}
 username=${user1} ;${user1}
-">> /etc/asterisk/pjsip.conf
-            
+">> /etc/asterisk/pjsip.conf          
 5)
-        
-		
 		asterisk -rx "pjsip list endpoints"
 
         read -s -n 1
