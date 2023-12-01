@@ -179,7 +179,7 @@ fi
 			fi
 			
 			
-			USR1=`grep -o "endpoint = ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			USR1=`grep -o "aors= ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
