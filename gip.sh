@@ -159,6 +159,61 @@ fi
 		
 		
 
+3)
+
+            read -p " -Enter SIP Trunk: (* 4 name   *) : " name
+			
+			read -p " -Enter SIP Trunk ip: " trankip
+			
+			
+			sleep 3
+			gip
+			
+			fi
+			
+			
+			NAM=`grep -o "aors = ${name}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			
+			sleep 1
+ 
+           if [ "$NAM" == "${name}" ]; then
+		   
+		   echo -e "${RED}  ERROR : User ${name} already exists ${NC}" 
+
+           sleep 3
+		   gip		   
+
+else
+
+echo "			
+[${name}]
+type=aor
+contact=sip:${trunkip}:5060
+[${name}]
+type=endpoint
+transport=transport-udp
+context=from-external
+disallow=all
+allow=all
+outbound_auth=gotrunk_auth
+aors=${name}
+[${name}]
+type=identify
+endpoint=${name}
+match=${trunkip}
+">> /etc/asterisk/pjsip.conf
+            
+echo -e "${GREEN}  User ${user} Created Successfully ${NC}"       
+
+
+fi
+
+service asterisk restart
+sleep 3
+gip
+
+read -s -n 1
+;;
 
 
 
