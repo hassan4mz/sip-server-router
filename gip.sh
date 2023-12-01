@@ -164,9 +164,19 @@ fi
             read -p " -Enter SIP Trunk: (* 4 name   *) : " name1
 			
 			read -p " -Enter SIP Trunk ip: " trunkip
-		
-			sleep 3			
-		
+		if [[ $name1 =~ ^[abc]+$ ]]; then
+			
+			sleep 1
+			
+			else
+			
+			echo -e "${RED}  ERROR : ${name1} is not a number ! ${NC}"
+			
+			sleep 3
+			gip
+			
+			fi
+			
 			NAM=`grep -o "aors = ${name1}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
