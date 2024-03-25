@@ -17,7 +17,7 @@ clear
 
 opkg update
 
-opkg install asterisk asterisk-pjsip asterisk-bridge-simple asterisk-codec-alaw asterisk-codec-ulaw asterisk-res-rtp-asterisk
+opkg install asterisk asterisk-chan-sip asterisk-bridge-simple asterisk-codec-alaw asterisk-codec-ulaw asterisk-res-rtp-asterisk
 
 rm /etc/asterisk/extensions.conf
 >/etc/asterisk/pjsip.conf
