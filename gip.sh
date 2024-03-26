@@ -55,7 +55,7 @@ echo " "
 			fi
 			
 			
-			USR=`grep -o "aors = ${user}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			USR=`grep -o "aors = ${user}" /etc/asterisk/sip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
@@ -70,25 +70,17 @@ else
 
 echo "			
 [${user}] ;${user}
-type = endpoint ;${user}
-context = internal ;${user}
-disallow = all ;${user}
-allow = alaw ;${user}
-aors = ${user} ;${user}
-auth = auth${user} ;${user}
-direct_media = no ;${user}
+ type=friend ;${user}
+ context=my-phones ;${user}
+ secret=${pass} ;${user}
+ host=dynamic ;${user}
+ allowguest=yes ;${user}
+ qualify=yes ;${user}
+ nat=no ;${user}
+ insecure=invite,port ;${user}
+ context=from-internal ;${user}
 
-[${user}] ;${user}
-type = aor ;${user}
-max_contacts = 3 ;${user}
-support_path = yes ;${user}
-
-[auth${user}] ;${user}
-type=auth ;${user}
-auth_type=userpass ;${user}
-password=${pass} ;${user}
-username=${user} ;${user}
-">> /etc/asterisk/pjsip.conf
+">> /etc/asterisk/sip.conf
             
 echo -e "${GREEN}  User ${user} Created Successfully ${NC}"       
 
@@ -121,13 +113,13 @@ read -s -n 1
 			fi
 			
 			
-			PUSR=`grep -o "aors = ${dele}" /etc/asterisk/pjsip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
+			PUSR=`grep -o "aors = ${dele}" /etc/asterisk/sip.conf | grep -o '[[:digit:]]*' | sed -n '1p'`
 			
 			sleep 1
  
            if [ "$PUSR" == "${dele}" ]; then
 		   
-		    sed -i "/\;$dele\>/d" /etc/asterisk/pjsip.conf
+		    sed -i "/\;$dele\>/d" /etc/asterisk/sip.conf
 		
 		
 			echo -e "${GREEN}  User Deleted Successfully ${NC}"
