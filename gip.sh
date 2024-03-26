@@ -156,7 +156,7 @@ fi
 3)
         
 		
-		asterisk -rx "pjsip list endpoints"
+		asterisk -rx "sip show peers"
 
         read -s -n 1
         ;;
