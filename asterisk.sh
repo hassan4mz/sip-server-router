@@ -27,9 +27,29 @@ cd /etc/asterisk/
 wget https://raw.githubusercontent.com/hassan4mz/sip-server-router/main/extensions.conf
 
 echo "[simpletrans]
-type=transport
-protocol=udp
-bind=0.0.0.0
+ transport=tls,tcp,udp
+ bindport=5060
+ bindaddr=0.0.0.0
+ nat=no
+ language=en
+ allowguest=yes
+ srvlookup=no
+ disallow=all
+ allow=ulaw
+ allow=alaw
+ allow=gsm
+ dateformat=%F %T
+ alwaysauthreject=yes
+ localnet=192.168.1.1/255.255.255.0 ;; change this according to your LAN configuration
+ localnet=127.0.0.0/255.255.255.0
+ tcpbindaddr=0.0.0.0
+ tcpenable=yes
+ jbenable=yes
+ jbforce=yes
+ jbmaxsize=250
+ jbimpl=adaptive
+ jbtargetextra=40
+ jblog=no
 
 " >> /etc/asterisk/pjsip.conf
 
