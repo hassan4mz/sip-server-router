@@ -14,6 +14,13 @@ Step 1 : Run This Command in Openwrt SSH
 rm -f asterisk.sh && wget https://raw.githubusercontent.com/hassan4mz/sip-server-router/sip/asterisk.sh && chmod 777 asterisk.sh && sh asterisk.sh
 ```
 
+Step 2 : Run This Command in Openwrt SSH
+```
+rm -f gip.sh && wget https://raw.githubusercontent.com/hassan4mz/sip-server-router/sip/gip.sh && chmod 777 gip.sh
+```
+
+
+
 Step 2 : Sip Manage Menu Command :
 
 ```
