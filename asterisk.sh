@@ -20,7 +20,7 @@ opkg update
 opkg install asterisk asterisk-chan-sip asterisk-bridge-simple asterisk-codec-alaw asterisk-codec-ulaw asterisk-res-rtp-asterisk
 
 rm /etc/asterisk/extensions.conf
->/etc/asterisk/pjsip.conf
+>/etc/asterisk/sip.conf
 
 cd /etc/asterisk/
 
@@ -51,7 +51,7 @@ echo "[simpletrans]
  jbtargetextra=40
  jblog=no
 
-" >> /etc/asterisk/pjsip.conf
+" >> /etc/asterisk/sip.conf
 
 uci set asterisk.general.enabled='1'
 
